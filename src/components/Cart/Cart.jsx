@@ -1,6 +1,7 @@
+import Modal from "../UI/Modal";
 import "./Cart.scss";
 
-const Cart = () => {
+const Cart = ({ hideCart }) => {
   const cartItems = (
     <ul className="cart-items">
       {[].map((item) => (
@@ -9,17 +10,19 @@ const Cart = () => {
     </ul>
   );
   return (
-    <div>
+    <Modal hideCart={hideCart}>
       {cartItems}
       <div className="total">
         <span>Итого</span>
         <span>6999</span>
       </div>
       <div className="actions">
-        <button className="button--alt">Закрыть</button>
-        <button className="button">оформить</button>
+        <button className="button--alt" onClick={hideCart}>
+          Закрыть
+        </button>
+        <button className="button">Оформить</button>
       </div>
-    </div>
+    </Modal>
   );
 };
 
