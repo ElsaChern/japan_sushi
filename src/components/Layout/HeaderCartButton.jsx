@@ -1,9 +1,9 @@
 import CartIcon from "../Cart/CartIcon";
 import "./HeaderCartButton.scss";
 
-const HeaderCartButton = () => {
+const HeaderCartButton = ({ showCart }) => {
   return (
-    <button className="button">
+    <button className="button" onClick={showCart}>
       <span className="icon">
         <CartIcon />
       </span>
