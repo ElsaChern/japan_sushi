@@ -6,11 +6,16 @@ import CartItem from "./CartItem";
 
 const Cart = ({ hideCart }) => {
   const cartContext = useContext(CartContext);
-  const totalAmount = `${cartContext.totalAmount.toFixed(2)} p.`;
+  const totalAmount = `${Math.abs(cartContext.totalAmount).toFixed(2)} p.`;
   const hasItem = cartContext.items.length > 0;
 
-  const removeCartItem = (item) => {};
-  const addCartItem = (id) => {};
+  const removeCartItem = (id) => {
+    cartContext.removeItem(id);
+  };
+
+  const addCartItem = (item) => {
+    cartContext.addItem({ ...item, amount: 1 });
+  };
 
   const cartItems = (
     <ul className="cart-items">
@@ -20,8 +25,8 @@ const Cart = ({ hideCart }) => {
           name={item.name}
           amount={item.amount}
           price={item.price}
-          onRemove={removeCartItem}
-          onAdd={addCartItem}
+          onAdd={addCartItem.bind(null, item)}
+          onRemove={removeCartItem.bind(null, item.id)}
         />
       ))}
     </ul>
