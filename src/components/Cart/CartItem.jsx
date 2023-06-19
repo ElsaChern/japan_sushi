@@ -1,7 +1,7 @@
 import "./CartItem.scss";
 
 const CartItem = (props) => {
-  const price = `$${props.price.toFixed(2)}`;
+  const price = `${props.price.toFixed(2)} р`;
 
   return (
     <li className="cart-item">
@@ -13,7 +13,7 @@ const CartItem = (props) => {
         </div>
       </div>
       <div className="actions">
-        <button onClick={props.onRemove}>−</button>
+        <button onClick={props.onRemove}>-</button>
         <button onClick={props.onAdd}>+</button>
       </div>
     </li>
