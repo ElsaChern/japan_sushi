@@ -1,7 +1,7 @@
 import "./CartItem.scss";
 
 const CartItem = (props) => {
-  const price = `${props.price.toFixed(2)} р`;
+  const price = `${props.price} р`;
 
   return (
     <li className="cart-item">
