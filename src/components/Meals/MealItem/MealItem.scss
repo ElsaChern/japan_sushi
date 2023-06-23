@@ -1,9 +1,17 @@
 .meal {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  align-items: flex-end;
   margin: 1rem;
   padding-bottom: 1rem;
   border-bottom: 1px solid #ccc;
+}
+
+.wrapper {
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .meal h3 {
@@ -12,6 +20,19 @@
 
 .description {
   font-style: italic;
+}
+
+.weight {
+  font-style: italic;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+}
+
+.container img {
+  width: 30%;
 }
 
 .price {

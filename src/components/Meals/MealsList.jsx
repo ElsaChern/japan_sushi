@@ -10,6 +10,8 @@ const MealsList = () => {
       id={meal.id}
       name={meal.name}
       description={meal.description}
+      weight={meal.weight}
+      img={meal.img}
       price={meal.price}
     />
   ));
