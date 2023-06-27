@@ -11,6 +11,29 @@
   padding: 0;
 }
 
+.loader {
+  text-align: center;
+  margin: 40px;
+}
+
+.loader img {
+  width: 100px;
+}
+
+.error {
+  text-align: center;
+  margin: 50px;
+}
+
+.error p {
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.error img {
+  width: 200px;
+}
+
 @keyframes meals-appear {
   from {
     opacity: 0;
