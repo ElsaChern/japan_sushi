@@ -1,20 +1,25 @@
 import "./CartItem.scss";
+import { AiOutlinePlus, AiOutlineMinus } from "react-icons/ai";
 
-const CartItem = (props) => {
-  const price = `${props.price} р`;
+const CartItem = ({ price, name, amount, onRemove, onAdd }) => {
+  const itemPrice = `${price} ₽`;
 
   return (
     <li className="cart-item">
       <div>
-        <h2>{props.name}</h2>
+        <h2>{name}</h2>
         <div className="summary">
-          <span className="price">{price}</span>
-          <span className="amount">x {props.amount}</span>
+          <span className="price">{itemPrice}</span>
+          <span className="amount">x {amount}</span>
         </div>
       </div>
-      <div className="actions">
-        <button onClick={props.onRemove}>-</button>
-        <button onClick={props.onAdd}>+</button>
+      <div className="action">
+        <button onClick={onRemove}>
+          <AiOutlineMinus className="buttonIcon" />
+        </button>
+        <button onClick={onAdd}>
+          <AiOutlinePlus className="buttonIcon" />
+        </button>
       </div>
     </li>
   );

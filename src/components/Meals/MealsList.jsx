@@ -1,4 +1,3 @@
-import Card from "../UI/Card";
 import "./MealsList.scss";
 import MealItem from "./MealItem/MealItem";
 import { useEffect, useState } from "react";
@@ -72,13 +71,7 @@ const MealsList = () => {
       price={meal.price}
     />
   ));
-  return (
-    <section className="meals">
-      <Card>
-        <ul>{mealsList}</ul>
-      </Card>
-    </section>
-  );
+  return <div className="mealsList">{mealsList}</div>;
 };
 
 export default MealsList;
