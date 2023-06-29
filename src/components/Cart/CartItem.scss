@@ -32,9 +32,12 @@
   border-radius: 7px;
 }
 
-.actions {
-  display: flex;
-  flex-direction: column;
+.action {
+  margin-bottom: -40px;
+}
+
+.action button {
+  padding: 0.1rem 0.2rem;
 }
 
 @media (min-width: 768px) {

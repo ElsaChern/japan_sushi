@@ -1,7 +1,7 @@
 import { useContext, useEffect, useState } from "react";
-import CartIcon from "../Cart/CartIcon";
 import "./HeaderCartButton.scss";
 import CartContext from "../../store/cart-context";
+import { BsCart3 } from "react-icons/bs";
 
 const HeaderCartButton = ({ showCart }) => {
   const [isButtonAnimated, setIsButtonAnimated] = useState(false);
@@ -30,7 +30,7 @@ const HeaderCartButton = ({ showCart }) => {
   return (
     <button className={bumpButton} onClick={showCart}>
       <span className="icon">
-        <CartIcon />
+        <BsCart3 className="icon" />
       </span>
       <span>Корзина</span>
       <span className="badge">{cartItemsNumber}</span>
