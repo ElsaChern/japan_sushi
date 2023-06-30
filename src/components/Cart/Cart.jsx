@@ -1,13 +1,16 @@
-import { useContext } from "react";
-import Modal from "../UI/Modal";
+import { useContext, useState } from "react";
 import "./Cart.scss";
+import Modal from "../UI/Modal";
 import CartContext from "../../store/cart-context";
 import CartItem from "./CartItem";
+import SubmitOder from "./SubmitOder";
 
 const Cart = ({ hideCart }) => {
   const cartContext = useContext(CartContext);
   const totalAmount = `${Math.abs(cartContext.totalAmount)} ₽`;
   const hasItem = cartContext.items.length > 0;
+
+  const [isSubmitAvaliable, setIsSubmitAvaliable] = useState(false);
 
   const removeCartItem = (id) => {
     cartContext.removeItem(id);
@@ -15,6 +18,10 @@ const Cart = ({ hideCart }) => {
 
   const addCartItem = (item) => {
     cartContext.addItem({ ...item, amount: 1 });
+  };
+
+  const submitHandler = () => {
+    setIsSubmitAvaliable(true);
   };
 
   const cartItems = (
@@ -31,6 +38,7 @@ const Cart = ({ hideCart }) => {
       ))}
     </ul>
   );
+
   return (
     <Modal hideCart={hideCart}>
       {cartItems}
@@ -38,12 +46,19 @@ const Cart = ({ hideCart }) => {
         <span>Итого</span>
         <span>{totalAmount}</span>
       </div>
-      <div className="actions">
-        <button className="button--alt" onClick={hideCart}>
-          Закрыть
-        </button>
-        {hasItem && <button className="button">Оформить</button>}
-      </div>
+      {isSubmitAvaliable && <SubmitOder />}
+      {!isSubmitAvaliable && (
+        <div className="actions">
+          <button className="button--alt" onClick={hideCart}>
+            Закрыть
+          </button>
+          {hasItem && (
+            <button className="button" onClick={submitHandler}>
+              Оформить
+            </button>
+          )}
+        </div>
+      )}
     </Modal>
   );
 };
