@@ -1,5 +1,4 @@
 .submitForm {
-  // height: 20rem;
   background-color: #6b068a41;
   border-radius: 14px;
   padding: 10px;
@@ -43,6 +42,15 @@
   background-color: #ccc;
 }
 
+.submitAction button:disabled,
+.submitAction button:disabled:hover,
+.submitAction button:disabled:active {
+  background-color: #ccc;
+  color: #6b068aa2;
+  border-color: #6b068aa2;
+  cursor: not-allowed;
+}
+
 .submitAction .submit {
   border: 1px solid #6b068a;
   background-color: #6b068a;
@@ -57,11 +65,7 @@
   color: white;
 }
 
-.invalid label {
-  color: red;
-}
-
 .invalid input {
   border-color: red;
-  background-color: #dccccc;
+  background-color: #b7b5b54a;
 }

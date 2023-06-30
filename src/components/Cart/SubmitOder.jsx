@@ -1,31 +1,114 @@
 import "./SubmitOder.scss";
+import useInput from "../../hooks/useInput";
 
 const SubmitOder = () => {
+  const {
+    value: enteredName,
+    hasError: hasNameInputError,
+    isValueValid: isNameValid,
+    InputChange: nameInputChange,
+    InputLostFocus: nameInputLostFocus,
+    clearInputValue: clearNameInput,
+  } = useInput((val) => val.trim() !== "");
+
+  const {
+    value: enteredPhone,
+    hasError: hasPhoneInputError,
+    isValueValid: isPhoneValid,
+    InputChange: phoneInputChange,
+    InputLostFocus: phoneInputLostFocus,
+    clearInputValue: clearPhoneInput,
+  } = useInput((val) => val.trim() !== "");
+
+  const {
+    value: enteredCity,
+    hasError: hasCityInputError,
+    isValueValid: isCityValid,
+    InputChange: cityInputChange,
+    InputLostFocus: cityInputLostFocus,
+    clearInputValue: clearCityInput,
+  } = useInput((val) => val.trim() !== "");
+
+  const {
+    value: enteredAddress,
+    hasError: hasAddressInputError,
+    isValueValid: isAddressValid,
+    InputChange: addressInputChange,
+    InputLostFocus: addressInputLostFocus,
+    clearInputValue: clearAddressInput,
+  } = useInput((val) => val.trim() !== "");
+
+  let formValid = false;
+  if (isNameValid && isPhoneValid && isCityValid && isAddressValid) {
+    formValid = true;
+  }
+
   const confirmOder = (e) => {
     e.preventDefault();
+    if (!isNameValid && !isPhoneValid && !isCityValid && !isAddressValid) {
+      return;
+    }
+    clearNameInput();
+    clearPhoneInput();
+    clearCityInput();
+    clearAddressInput();
   };
 
   return (
     <>
       <form className="submitForm" onSubmit={confirmOder}>
-        <div className="control">
+        <div className={`${"control"} ${hasNameInputError ? "invalid" : ""}`}>
           <label>Имя</label>
-          <input type="text" id="name"></input>
+          <input
+            type="text"
+            name="name"
+            id="name"
+            value={enteredName}
+            onChange={nameInputChange}
+            onBlur={nameInputLostFocus}
+          />
         </div>
-        <div className="control">
+        <div className={`${"control"} ${hasPhoneInputError ? "invalid" : ""}`}>
           <label>Номер телефона</label>
-          <input type="text" id="phone"></input>
+          <input
+            type="tel"
+            maxlength="16"
+            placeholder="89876543211"
+            name="phone"
+            id="phone"
+            value={enteredPhone}
+            onChange={phoneInputChange}
+            onBlur={phoneInputLostFocus}
+          />
         </div>
-        <div className="control">
+        <div className={`${"control"} ${hasCityInputError ? "invalid" : ""}`}>
           <label>Город</label>
-          <input type="text" id="city"></input>
+          <input
+            type="text"
+            name="city"
+            id="city"
+            value={enteredCity}
+            onChange={cityInputChange}
+            onBlur={cityInputLostFocus}
+          />
         </div>
-        <div className="control">
+        <div
+          className={`${"control"} ${hasAddressInputError ? "invalid" : ""}`}
+        >
           <label>Адрес доставки</label>
-          <input type="text" id="address"></input>
+          <input
+            type="text"
+            name="address"
+            id="address"
+            value={enteredAddress}
+            onChange={addressInputChange}
+            onBlur={addressInputLostFocus}
+          />
         </div>
         <div className="submitAction">
-          <button className="submit">Оформить заказ</button>
+          <button className="submit" disabled={!formValid}>
+            Оформить заказ
+          </button>
         </div>
       </form>
     </>

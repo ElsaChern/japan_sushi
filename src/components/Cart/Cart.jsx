@@ -3,7 +3,7 @@ import "./Cart.scss";
 import Modal from "../UI/Modal";
 import CartContext from "../../store/cart-context";
 import CartItem from "./CartItem";
-import SubmitOder from "./SubmitOder";
+import SubmitOrder from "./SubmitOder";
 
 const Cart = ({ hideCart }) => {
   const cartContext = useContext(CartContext);
@@ -46,7 +46,7 @@ const Cart = ({ hideCart }) => {
         <span>Итого</span>
         <span>{totalAmount}</span>
       </div>
-      {isSubmitAvaliable && <SubmitOder />}
+      {isSubmitAvaliable && <SubmitOrder />}
       {!isSubmitAvaliable && (
         <div className="actions">
           <button className="button--alt" onClick={hideCart}>
