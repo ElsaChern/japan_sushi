@@ -1,7 +1,7 @@
 import "./SubmitOder.scss";
 import useInput from "../../hooks/useInput";
 
-const SubmitOder = () => {
+const SubmitOder = ({ onSubmit }) => {
   const {
     value: enteredName,
     hasError: hasNameInputError,
@@ -48,6 +48,13 @@ const SubmitOder = () => {
     if (!isNameValid && !isPhoneValid && !isCityValid && !isAddressValid) {
       return;
     }
+    onSubmit({
+      name: enteredName,
+      phone: enteredPhone,
+      city: enteredCity,
+      address: enteredAddress,
+    });
+
     clearNameInput();
     clearPhoneInput();
     clearCityInput();
