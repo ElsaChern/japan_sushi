@@ -1,40 +1,47 @@
-# Getting Started with Create React App
+# Учебный проект "Интернет-магазин Суши"
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+👨🏻‍💻 Проект "Интернет-магазин Суши" представляет собой одностраничный сайт, выполненный в качестве практического задания курса по React 
 
-## Available Scripts
+## Функционал проекта
 
-In the project directory, you can run:
+- отображение статичных карточек товара с их описанием (в качестве базы данных использована платформа firebase (https://firebase.google.com/);
+- добавление товаров в корзину;
+- возможность удаления и увеличения/уменьшения количества товаров внутри корзины;
+- подсчет итоговой суммы внутри корзины;
+- возможность оформления заказа с помощью выпадающей формы;
+- сохранение данных на сервере (в качестве базы данных использована платформа firebase (https://firebase.google.com/);
+- фидбек для пользователя об отправке данных на сервер
 
-### `npm start`
+### Технологический стек
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+При создании проекта использовался следующий стек технологий: HTML, SCSS, React, React-icons и функциональные компоненты React. 
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Работа с проектом 
 
-### `npm test`
+Для запуска проекта, пожалуйста, выполните следующие действия:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+1. Склонировать проект на ваш компьютер с Github с помощью команды:
 
-### `npm run build`
+`git clone git@github.com:ElsaChern/japan_sushi.git`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+2. Установить зависимости:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+`npm install`
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+3. Запустить проект:
 
-### `npm run eject`
+`npm start`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Скриншоты
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+<img width="1147" alt="image" src="https://github.com/ElsaChern/japan_sushi/assets/94759165/42a95ae3-ffd3-40f1-bd2f-21c73ff9e96e">
+<img width="1147" alt="image" src="https://github.com/ElsaChern/japan_sushi/assets/94759165/3ef467de-bb9e-43d0-8b96-1f84ae31e048">
+<img width="1146" alt="image" src="https://github.com/ElsaChern/japan_sushi/assets/94759165/78888b45-7554-4bba-bb9b-b8a9b711f146">
+<img width="1149" alt="image" src="https://github.com/ElsaChern/japan_sushi/assets/94759165/223db94f-0eba-4cff-851e-fabed180e741">
+<img width="1149" alt="image" src="https://github.com/ElsaChern/japan_sushi/assets/94759165/0e9497c6-0822-4f25-be8c-4066e0642779">
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+
+
+
+
