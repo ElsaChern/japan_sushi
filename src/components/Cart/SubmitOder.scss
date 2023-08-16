@@ -1,7 +1,16 @@
 .submitForm {
   background-color: #6b068a41;
+  border: 1px solid black;
   border-radius: 14px;
   padding: 10px;
+  overflow: auto;
+  max-height: 16rem;
+}
+
+@media (max-width: 870px) {
+  .cart-items {
+    font-size: 0.7rem;
+  }
 }
 
 .control {
@@ -22,9 +31,34 @@
   padding: 5px;
 }
 
+@media (max-width: 870px) {
+  .control input {
+    width: 20rem;
+  }
+}
+
+@media (max-width: 700px) {
+  .control input {
+    width: 15rem;
+  }
+}
+
+@media (max-width: 545px) {
+  .control input {
+    width: 10rem;
+  }
+}
+
 .submitAction {
   display: flex;
   justify-content: flex-end;
+}
+
+@media (max-width: 865px) {
+  .submitAction {
+    display: flex;
+    justify-content: center;
+  }
 }
 
 .submitAction button {

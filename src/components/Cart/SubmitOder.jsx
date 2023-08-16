@@ -79,7 +79,7 @@ const SubmitOder = ({ onSubmit }) => {
           <label>Номер телефона</label>
           <input
             type="tel"
-            maxlength="16"
+            maxLength="16"
             placeholder="89876543211"
             name="phone"
             id="phone"
