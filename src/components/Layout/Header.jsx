@@ -9,7 +9,7 @@ const Header = ({ showCart }) => {
       <div className="header">
         <div className="logo">
           <img src={headerIcon} alt="Логотип"></img>
-          <h1>SushiYam</h1>
+          <h1 className="header-title">SushiYam</h1>
         </div>
         <HeaderCartButton showCart={showCart} />
       </div>

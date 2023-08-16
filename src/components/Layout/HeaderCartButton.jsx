@@ -32,7 +32,7 @@ const HeaderCartButton = ({ showCart }) => {
       <span className="icon">
         <BsCart3 className="icon" />
       </span>
-      <span>Корзина</span>
+      <span className="button-text">Корзина</span>
       <span className="badge">{cartItemsNumber}</span>
     </button>
   );

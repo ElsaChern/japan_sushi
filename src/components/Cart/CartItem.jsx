@@ -15,10 +15,10 @@ const CartItem = ({ price, name, amount, onRemove, onAdd }) => {
       </div>
       <div className="action">
         <button onClick={onRemove}>
-          <AiOutlineMinus className="buttonIcon" />
+          <AiOutlineMinus />
         </button>
         <button onClick={onAdd}>
-          <AiOutlinePlus className="buttonIcon" />
+          <AiOutlinePlus />
         </button>
       </div>
     </li>

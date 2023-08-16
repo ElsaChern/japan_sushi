@@ -23,6 +23,12 @@
   margin-right: 1rem;
 }
 
+@media screen and (max-width: 645px) {
+  .button-text {
+    display: none;
+  }
+}
+
 .badge {
   background-color: #a715d7;
   padding: 0.2rem 1rem;
